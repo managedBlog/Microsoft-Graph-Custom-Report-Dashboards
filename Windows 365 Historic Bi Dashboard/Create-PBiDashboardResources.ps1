@@ -7,15 +7,15 @@
 $tenantId = "<YOUR_TENANT_ID_HERE>" # Replace with your Azure Tenant ID
 $resourceGroupName = "<RESOURCE_GROUP_NAME>" # Replace with your Resource Group name
 $location = "East US" # Azure region
-$workspaceName = "W365CustomReporting"
-$dataCollectionRuleName = "DCR-W365-CustomReporting"
-$automationAccountName = "AzAut-W365-CustomReporting"
-$managedIdentityName = "MI_W365-CustomReporting"
-$customTableName = "W365_CloudPCs_CL"
-$streamDeclarationName = "Custom-CloudPCsRAW"
-$OutputStreamName = "Custom-W365_CloudPCs_CL"
-$appRegistrationName = "W365_CustomReporting_App"
-$RunbookName = "CloudPCDataCollection"
+$workspaceName = "W365CustomReporting" # Must start or end with a number or letter; can contain numbers, letters, and hyphens. 
+$customTableName = "W365_CloudPCs_CL" # Up to 45 characters; must start with a number or letter and end with "_CL"; can contain numbers, letters, and underscores
+$dataCollectionRuleName = "DCR-W365-CustomReporting" # From 1 to 64 characters; allows alphanumeric characters, numbers, or hyphens; cannot start or end with a space; must be unique in the resource group
+$automationAccountName = "AzAut-W365-CustomReporting" # From 6 to 50 characters; Must start and end with a number or letter; Only alphanumeric characters and hyphens allowed
+$managedIdentityName = "MI_W365-CustomReporting" # From 3 to 128 characters; Must start and end with a number or letter; Only alphanumeric characters, hyphens, and underscores allowed
+$streamDeclarationName = "Custom-CloudPCsRAW" # Stream name for the data collection rule; must start with "Custom-"
+$OutputStreamName = "Custom-W365_CloudPCs_CL" # Output stream name for the data collection rule; must follow the format "Custom-<TableName>"
+$appRegistrationName = "W365_CustomReporting_App" # Name for the app registration; cannot contain these special characters: < > ; & % 
+$RunbookName = "CloudPCDataCollection" # Less than 64 characters; must start with a letter or number; can contain letters, numbers, underscores, and hyphens
 
 # =====================
 # Authenticate to Azure
