@@ -1,5 +1,37 @@
 #Requires -modules Az.Accounts,Az.ManagedServiceIdentity,Az.OperationalInsights,Az.Automation,Az.Monitor,Az.Resources,Microsoft.Graph.Applications,Microsoft.Graph.Authentication
 
+<#
+.SYNOPSIS
+    Deploys all Azure resources and configuration required for the W365 Custom Reporting Dashboard solution.
+
+.DESCRIPTION
+    This script automates the creation of a Log Analytics Workspace, custom table, Data Collection Rule, Data Collection Endpoint, 
+    User-Assigned Managed Identity, Azure Automation Account, and required Microsoft Graph permissions. 
+    It also creates and imports an Azure Automation Runbook for Cloud PC data collection.
+
+
+
+.NOTES
+    Author: Sean Bulger
+    Created: March 1, 2025
+    License: Available under the MIT License
+    Required Modules: Az.Accounts, Az.ManagedServiceIdentity, Az.OperationalInsights, Az.Automation, Az.Monitor, Az.Resources, Microsoft.Graph.Applications, Microsoft.Graph.Authentication
+
+
+    Warning: This script is provided "as is" without warranty of any kind. Use at your own risk. The author is not responsible for any damages or issues that may arise from using this script. 
+    Please test in a non-production environment before deploying in production. 
+
+    Ensure you have the necessary permissions to create resources in the specified Azure subscription and resource group.
+    Replace the placeholder variables at the top of the script with your actual values before running.
+    This script requires Azure PowerShell modules and Microsoft Graph PowerShell SDK to be installed and imported.
+    Ensure you have the latest versions of these modules.
+
+
+.EXAMPLE
+    .\\Create-PBiDashboardResources_Final.ps1
+
+#>
+
 # =====================
 # Variables (replace placeholders before use)
 # =====================
@@ -394,3 +426,16 @@ remove-item $tempFile
 Write-Host "Setup complete. Runbook created and ready to execute."
 
 
+<#
+
+DISCLAIMER
+
+    The sample scripts are not supported under any Microsoft standard support program or service. 
+    The sample scripts are provided AS IS without warranty of any kind. 
+    Microsoft further disclaims all implied warranties including, without limitation, any implied warranties of merchantability or of fitness for a particular purpose. 
+    The entire risk arising out of the use or performance of the sample scripts and documentation remains with you. 
+    In no event shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the scripts be liable for any damages whatsoever 
+    (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out 
+    of the use of or inability to use the sample scripts or documentation, even if Microsoft has been advised of the possibility of such damages.
+
+#>
